@@ -6,9 +6,8 @@ import Advert from '../components/advert/Advert'
 
 function HomeScreen() {
   return (
-    <Layout>
+    <Layout> 
         <div>
-        <h1>HomeScreen</h1>
         <Advert />
         <ProductList />
     </div>
