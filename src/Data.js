@@ -9,7 +9,9 @@ import img8 from '../src/img/productImg/product-8.png'
 const Products = [
     {
         id:1,
+        slug:'phone-one',
         title:'Phone One',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$250.00',
         img:img1,
@@ -18,7 +20,9 @@ const Products = [
     },
     {
         id:2,
+        slug:'phone-two',
         title:'Phone Two',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$200.00',
         img:img2,
@@ -27,7 +31,9 @@ const Products = [
     },
     {
         id:3,
+        slug:'phone-three',
         title:'Phone Three',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$300.00',
         img:img3,
@@ -36,7 +42,9 @@ const Products = [
     },
     {
         id:4,
+        slug:'phone-four',
         title:'Phone Four',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$400.00',
         img:img4,
@@ -45,7 +53,9 @@ const Products = [
     },
     {
         id:5,
+        slug:'phone-five',
         title:'Phone Five',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$450.00',
         img:img5,
@@ -54,7 +64,9 @@ const Products = [
     },
     {
         id:6,
+        slug:'phone-six',
         title:'Phone Six',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$600.00',
         img:img6,
@@ -63,7 +75,9 @@ const Products = [
     },
     {
         id:7,
+        slug:'phone-seven',
         title:'Phone Seven',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$650.00',
         img:img7,
@@ -72,7 +86,9 @@ const Products = [
     },
     {
         id:8,
+        slug:'phone-eight',
         title:'Phone Eight',
+        company:'SAMSUNG',
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$700.00',
         img:img8,
@@ -83,10 +99,12 @@ const Products = [
 
 const ProductDetail = {
     id:1,
+    slug:'phone-one',
+    company:'SAMSUNG',
     title:'Phone One',
     description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
     price:'$250.00',
-    img:'../public/img/product-1.png',
+    img:img1,
     inCart:false,
     count:0,
 }

@@ -1,17 +1,18 @@
 import React from 'react'
 import Product from '../Product/Product'
 import {Consumer} from '../../Context'
+import styles from './ProductList.module.css'
 
-function ProductList() {
+const ProductList = ()=>{
 
   return ( 
-    <div>
+    <div className={styles.container}>
       <Consumer>
       {(state)=>{
         return (state.Products.length > 0 && state.Products.map((product) => (<Product key={product.id}  product={product} addToCart={state.addToCart}/>)))
       }}
       </Consumer>
-    </div>
+    </div> 
   )
 }
 

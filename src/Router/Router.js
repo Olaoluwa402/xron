@@ -1,6 +1,6 @@
 import React from 'react'
 import {Routes,Route,Navigate} from 'react-router-dom'
-import {HomeScreen, AboutScreen, ContactScreen,CheckoutScreen,CartScreen,LoginScreen, RegisterScreen, NotFoundScreen, DashboardScreen,Layout,Profile,Orders, Receipts} from './index'
+import {HomeScreen, AboutScreen, ProductsScreen,ProductDetailScreen, ContactScreen,CheckoutScreen,CartScreen,LoginScreen, RegisterScreen, NotFoundScreen, DashboardScreen,Layout,Profile,Orders, Receipts} from './index'
 
 const Router = ()=> {
   return (
@@ -9,6 +9,8 @@ const Router = ()=> {
        <Route path='/about' element={<AboutScreen />}/>
        <Route path='/contact' element={<ContactScreen />}/>
        <Route path='/register' element={<RegisterScreen />}/>
+       <Route path='/products' element={<ProductsScreen/>} />
+       <Route path='/products/:slug' element={<ProductDetailScreen/>} />
        <Route path='/login' element={<LoginScreen />}/>
        <Route path='/cart' element={<CartScreen />}/>
        <Route path='/not-found' element={<NotFoundScreen />}/>
