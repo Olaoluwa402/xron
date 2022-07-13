@@ -10,7 +10,8 @@ const Provider = (props)=>{
     const [state, setState] = useState({
         Products:[],
         ProductDetail:ProductDetail,
-        modalOpen:false
+        modalOpen:false,
+        cart:[]
     })
 
     useEffect(()=>{
@@ -30,11 +31,48 @@ const setProducts = ()=> {
         Products:ProductsCopy
     })
 }
-    const addToCart = ()=>{
-        console.log('add to cart')
+
+
+        // get product
+        const getProduct = (slug)=>{
+            const product = state.Products.find((product) => product.slug === slug)
+            return product
+        }
+        // product detail
+        const productDetailHandler = (slug)=>{
+             const product = getProduct(slug)
+             setState({...state, ProductDetail:product})
+        }
+ 
+        // add item to cart
+    const addToCart = (slug)=>{
+        // copy products into a new array
+        let tempProducts = [...state.Products]
+        // get index of product
+        const index = tempProducts.indexOf(getProduct(slug))
+        // get product by index
+        let product = tempProducts[index]
+    //    update count, inCart and total
+         product.count = 1;
+         product.inCart = true;
+         product.total = product.price;
+ 
+
+        //  tell the state about the current changes
+         setState({
+            ...state,
+            Products:tempProducts,
+            cart: [...state.cart,product]
+         })
     }
+
+    console.log(state)
     return (
-        <GlobalContext.Provider value={{...state,addToCart }}>
+        <GlobalContext.Provider value={{
+            ...state,
+            addToCart,
+            productDetailHandler
+            }}>
                 {props.children}
         </GlobalContext.Provider>
     )

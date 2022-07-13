@@ -8,6 +8,7 @@ ${
         const {color, backgroundColor}= colors.find((c)=> c.name === props.name)
 
         return `
+          width: 180px;
           padding:0.6rem 1.3rem;
           border:none;
           cursor:pointer;

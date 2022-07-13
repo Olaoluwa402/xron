@@ -5,11 +5,11 @@ import styles from './Title.module.css'
 
 function Title({name='default', children}) {
 
-    const {color, backgroundColor}= colors.find((c)=> c.name === name)
+    const {color}= colors.find((c)=> c.name === name)
 
   return (
-    <div className={styles.container} style={{backgroundColor:backgroundColor}}>
-        <h1 style={{color:color, backgroundColor:backgroundColor}}>
+    <div className={styles.container}>
+        <h1 style={{color:color}}>
             {children}
         </h1>
     </div>

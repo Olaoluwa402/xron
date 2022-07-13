@@ -17,6 +17,7 @@ const Products = [
         img:img1,
         inCart:true,
         count:0,
+        total:0
     },
     {
         id:2,
@@ -28,6 +29,7 @@ const Products = [
         img:img2,
         inCart:false,
         count:0,
+        total:0
     },
     {
         id:3,
@@ -39,6 +41,7 @@ const Products = [
         img:img3,
         inCart:false,
         count:0,
+        total:0
     },
     {
         id:4,
@@ -50,6 +53,7 @@ const Products = [
         img:img4,
         inCart:false,
         count:0,
+        total:0
     },
     {
         id:5,
@@ -61,6 +65,7 @@ const Products = [
         img:img5,
         inCart:false,
         count:0,
+        total:0
     },
     {
         id:6,
@@ -70,8 +75,9 @@ const Products = [
         description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, aliquam. Deleniti dolores laborum dolorem voluptates animi esse sequi molestiae nobis.',
         price:'$600.00',
         img:img6,
-        inCart:true,
+        inCart:false,
         count:0,
+        total:0
     },
     {
         id:7,
@@ -83,6 +89,7 @@ const Products = [
         img:img7,
         inCart:false,
         count:0,
+        total:0
     },
     {
         id:8,
@@ -94,6 +101,7 @@ const Products = [
         img:img8,
         inCart:false,
         count:0,
+        total:0
     },
 ]
 

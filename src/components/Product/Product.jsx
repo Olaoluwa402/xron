@@ -14,7 +14,7 @@ const Product = ({product, addToCart})=> {
          <div className={styles.cardImgContainer}>
           <Link to={`/products/${slug}`}><img src={img} alt={title} className={styles.cardImg}/></Link>
           <button disabled={inCart} className={styles.cardBtn}>
-             {inCart ? <p>In Cart</p> : (<HiOutlineShoppingCart onClick={addToCart} className={styles.cardIcon}/>)}
+             {inCart ? <p>In Cart</p> : (<HiOutlineShoppingCart onClick={()=> addToCart(slug)} className={styles.cardIcon}/>)}
           </button>
          </div>
          <div className={styles.cardFooter}>

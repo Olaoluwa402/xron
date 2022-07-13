@@ -1,0 +1,20 @@
+.product{
+    display:flex;
+    align-items: center;
+}
+
+.product .productImg{
+    flex: 1;
+    display: grid;
+}
+
+.product .productImg img{
+    margin: auto;
+}
+.product .productContent{
+    flex: 1;
+}
+
+.action .btn{
+    margin-right: 1.5rem;
+}

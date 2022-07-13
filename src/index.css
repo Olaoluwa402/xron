@@ -27,13 +27,6 @@ body{
   text-transform: uppercase;
 }
 
-.text-blue{
-  color:var(--mainBlue)
-}
-.text-bright{
-  color:var(--lightBlue)
-}
-
 /* slides */
 .slide{
   opacity:0;
