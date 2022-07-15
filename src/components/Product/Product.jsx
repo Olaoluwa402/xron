@@ -6,15 +6,28 @@ import PropTypes from 'prop-types';
 
  
 
-const Product = ({product, addToCart})=> {
+const Product = ({product, addToCart, openModal})=> {
   const {id,title, slug,img,description,price,inCart} = product
+
+  // console.log(product)
   return ( 
     <div className={styles.container}>
       <div className={styles.card}>
          <div className={styles.cardImgContainer}>
           <Link to={`/products/${slug}`}><img src={img} alt={title} className={styles.cardImg}/></Link>
           <button disabled={inCart} className={styles.cardBtn}>
-             {inCart ? <p>In Cart</p> : (<HiOutlineShoppingCart onClick={()=> addToCart(slug)} className={styles.cardIcon}/>)}
+             {
+             inCart 
+             ? <p>In Cart</p> 
+             : (
+              <HiOutlineShoppingCart 
+                onClick={()=> {
+                  if(slug){
+                    addToCart(slug)
+                    // openModal(slug)
+                  }
+                }} 
+                className={styles.cardIcon}/>)}
           </button>
          </div>
          <div className={styles.cardFooter}>

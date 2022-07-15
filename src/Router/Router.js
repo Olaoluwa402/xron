@@ -4,7 +4,7 @@ import {HomeScreen, AboutScreen, ProductsScreen,ProductDetailScreen, ContactScre
 
 const Router = ()=> {
   return (
-    <Routes>
+      <Routes>
        <Route path='/' element={<HomeScreen />}/>
        <Route path='/about' element={<AboutScreen />}/>
        <Route path='/contact' element={<ContactScreen />}/>

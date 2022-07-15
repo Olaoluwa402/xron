@@ -5,11 +5,11 @@ import styles from './Title.module.css'
 
 function Title({name='default', children}) {
 
-    const {color}= colors.find((c)=> c.name === name)
+    const {color}= colors.find((color)=> color.name === name)
 
   return (
     <div className={styles.container}>
-        <h1 style={{color:color}}>
+        <h1 style={{color:color, textTransform:'capitalize'}}>
             {children}
         </h1>
     </div>

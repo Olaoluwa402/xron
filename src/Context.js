@@ -10,7 +10,8 @@ const Provider = (props)=>{
     const [state, setState] = useState({
         Products:[],
         ProductDetail:ProductDetail,
-        modalOpen:false,
+        modalIsOpen:false,
+        modalProduct:ProductDetail,
         cart:[]
     })
 
@@ -44,7 +45,7 @@ const setProducts = ()=> {
              setState({...state, ProductDetail:product})
         }
  
-        // add item to cart
+        // add item to cart 
     const addToCart = (slug)=>{
         // copy products into a new array
         let tempProducts = [...state.Products]
@@ -56,22 +57,35 @@ const setProducts = ()=> {
          product.count = 1;
          product.inCart = true;
          product.total = product.price;
- 
-
         //  tell the state about the current changes
+        // openModal(slug)
          setState({
             ...state,
             Products:tempProducts,
+            ProductDetail:product,
+            modalIsOpen :true,
+            modalProduct:product,
             cart: [...state.cart,product]
          })
     }
+
+    // open modal
+  
+     // close modal
+     const closeModal = ()=>{
+        setState({
+          ...state,
+          modalIsOpen :false,
+        }) 
+  }
 
     console.log(state)
     return (
         <GlobalContext.Provider value={{
             ...state,
             addToCart,
-            productDetailHandler
+            productDetailHandler,
+            closeModal
             }}>
                 {props.children}
         </GlobalContext.Provider>

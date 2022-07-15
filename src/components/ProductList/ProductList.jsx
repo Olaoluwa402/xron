@@ -7,9 +7,17 @@ const ProductList = ()=>{
 
   return ( 
     <div className={styles.container}>
-      <Consumer>
+      <Consumer> 
       {(state)=>{
-        return (state.Products.length > 0 && state.Products.map((product) => (<Product key={product.id}  product={product} addToCart={state.addToCart}/>)))
+        return (state.Products.length > 0 && state.Products.map(
+          (product) => (
+          <Product 
+            key={product.id}  
+            product={product} 
+            addToCart={state.addToCart}
+            openModal={state.openModal}
+            />
+          )))
       }}
       </Consumer>
     </div> 

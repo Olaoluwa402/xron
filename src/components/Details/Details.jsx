@@ -5,7 +5,7 @@ import {HiOutlineShoppingCart} from 'react-icons/hi'
 import GlobalContext from '../../Context'
 import Title from '../Title/Title'
 import {Button} from '../Button'
-
+ 
 
 import styles from './Details.module.css'
 
@@ -14,7 +14,7 @@ function Details({slug}) {
   const {img,description,company,price,title,inCart} = state.ProductDetail;
   const {productDetailHandler, addToCart} = state;
 
-  useEffect(()=>{
+  useEffect(()=>{ 
     productDetailHandler(slug)
   }, [])
 
@@ -28,18 +28,19 @@ function Details({slug}) {
                   <img src={img} alt={title} />
                 </div>
                 <div className={styles.productContent}>
-                  <h2>Model - SAFARI</h2>
+                  <h2>Model - SAFARI</h2> 
                   <h4 className='text-title'>MADE BY - {company}</h4>
                   <h5>Price - {price}</h5>
                   <p>Description: {description}</p>
-                  <div className={styles.action}>
+                  <div className={styles.action}> 
                     <Link to='/'>
                       <Button name='success' className={styles.btn}>Store</Button>
                     </Link>
-                    <Button name='react' className={styles.btn}>
-
-                    {inCart ? <p>In Cart</p> : (<HiOutlineShoppingCart onClick={()=> addToCart(slug)} className={styles.cardIcon}/>)}
-                    </Button>
+                    {console.log(inCart)}
+                    { 
+                      inCart ? (<Button disabled={inCart} name='react' className={styles.btn}>In Cart</Button>) : ( <Button name='react' className={styles.btn} onClick={()=> addToCart(slug)}><HiOutlineShoppingCart className={styles.cardIcon}/></Button>)
+                    }
+                  
                   </div>
                 </div>
               </div>

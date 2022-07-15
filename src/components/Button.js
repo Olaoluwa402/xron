@@ -23,6 +23,11 @@ ${
             color:${backgroundColor};
             border: 2px solid ${backgroundColor}
           }
+
+          &:disabled{
+            background-color: #a6a6a6;
+            cursor: not-allowed;
+          }
         `
     }
 }

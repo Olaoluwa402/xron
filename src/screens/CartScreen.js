@@ -1,10 +1,24 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Layout from '../components/Layout/Layout'
+import Title from '../components/Title/Title'
+import CartTable from '../components/Cart/Cart'
+import GlobalContext from '../Context'
 
 function CartScreen() {
+  const {cart} = useContext(GlobalContext)
   return (
     <Layout>
-        <div>CartScreen</div>
+        <div>
+          {
+          cart.length > 0 
+            ? (
+              <div>
+                  <Title>Your Item(s)</Title>
+                  <CartTable />
+              </div>
+              ) 
+            : <div style={{height:'100vh'}}><Title>Your Cart Is currently empty</Title></div>}
+        </div>
     </Layout>
   )
 }

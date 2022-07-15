@@ -115,6 +115,7 @@ const ProductDetail = {
     img:img1,
     inCart:false,
     count:0,
+    total:0
 }
 
 export {Products, ProductDetail}
