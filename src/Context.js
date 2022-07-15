@@ -12,7 +12,10 @@ const Provider = (props)=>{
         ProductDetail:ProductDetail,
         modalIsOpen:false,
         modalProduct:ProductDetail,
-        cart:[]
+        cart:[],
+        cartSubTotal:0,
+        cartTotal:0,
+        cartTax:0
     })
 
     useEffect(()=>{
@@ -58,19 +61,40 @@ const setProducts = ()=> {
          product.inCart = true;
          product.total = product.price;
         //  tell the state about the current changes
-        // openModal(slug)
+        //  call add tptal
+
+        const cartItems = [...state.cart,product]
+
+        console.log(cartItems)
+
+        let tempTotal = 0;
+        //    state.cart.reduce((acc, curr)=> acc + curr, 0)
+           cartItems.forEach((item)=> {
+            const price = parseFloat(item.total.replace('$', ''))
+            console.log(item,price)
+            tempTotal += price
+           })
+
+           const tempTax = tempTotal * 0.03
+           const cartTax = parseFloat(tempTax.toFixed(2))
+           const cartTotal = tempTotal + cartTax
+
+           console.log(tempTotal, cartTotal, cartTax)
+
          setState({
             ...state,
             Products:tempProducts,
             ProductDetail:product,
             modalIsOpen :true,
             modalProduct:product,
-            cart: [...state.cart,product]
+            cart: [...state.cart,product],
+            cartSubTotal:tempTotal,
+            cartTotal:cartTotal,
+            cartTax:cartTax
          })
+     
     }
 
-    // open modal
-  
      // close modal
      const closeModal = ()=>{
         setState({
@@ -78,6 +102,34 @@ const setProducts = ()=> {
           modalIsOpen :false,
         }) 
   }
+
+//   sum cart items price
+       const addTotal = ()=>{ 
+           let tempTotal = 0;
+        //    state.cart.reduce((acc, curr)=> acc + curr, 0)
+         console.log(state.cart)
+           state.cart.forEach((item)=> {
+            const price = parseFloat(item.total.replace('$', ''))
+            console.log(item,price)
+            tempTotal += price
+           })
+
+           console.log(tempTotal)
+
+           const tempTax = tempTotal * 0.03
+           const cartTax = parseFloat(tempTax.toFixed(2))
+           const cartTotal = tempTotal + cartTax
+
+           console.log(tempTotal, cartTotal, cartTax)
+
+           setState({
+            ...state,
+            cartSubTotal:tempTotal,
+            cartTotal:cartTotal,
+            cartTax:cartTax
+           })
+       }
+
 
     console.log(state)
     return (

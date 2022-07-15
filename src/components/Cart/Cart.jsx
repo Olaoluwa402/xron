@@ -4,7 +4,7 @@ import GlobalContext from '../../Context'
 import {FiTrash2} from 'react-icons/fi'
 
  function Cart() {
-  const {ProductDetail:{img,title,price,total}} = useContext(GlobalContext)
+  const {cart, cartSubTotal, cartTax, cartTotal} = useContext(GlobalContext)
   return (
     <div className={styles.container}>
         <table>
@@ -20,8 +20,11 @@ import {FiTrash2} from 'react-icons/fi'
                   </tr>
               </thead> 
           <tbody>
-            <tr>
-                <td><img src={img} alt={title}/></td>
+            {cart.length > 0 && cart.map((item)=> {
+                const {img, title,price,total,id} = item
+
+                return  <tr key={id}>
+                <td ><img src={img} alt={title} className={styles.img}/></td>
                 <td>{title}</td>
                 <td>{price}</td>
                 <td className={styles.qtyContainer}>
@@ -32,8 +35,16 @@ import {FiTrash2} from 'react-icons/fi'
                 <td><FiTrash2 /></td>
                 <td>{total}</td>
             </tr>
+            })}
+           
           </tbody>
         </table>
+
+        <div>
+          <h5>cartSubTotal: {cartSubTotal}</h5>
+          <h5>cartTax: {cartTax}</h5>
+          <h5>cartTotal: {cartTotal}</h5>
+        </div>
     </div>
   )
 }

@@ -8,7 +8,7 @@ import styles from './NavBar.module.css'
 
 function NavBar() {
   const {cart} = useContext(GlobalContext)
-  console.log(cart)
+  
   return (
     <div className={styles.container}>
         <div className={styles.logo}>
